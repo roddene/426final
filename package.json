@@ -1,13 +1,13 @@
 {
   "name": "final",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "author": "",
   "scripts": {
     "build": "cd client &&npm run build",
     "install-client":"cd client &&npm install",
     "start":"node server.js",
-    "heroku-postbuild":"npm run install-client && npm run buildheroko",
+    "heroku-postbuild":"npm run install-client && npm run build",
     "client": "cd client &&npm start"
     
   },
