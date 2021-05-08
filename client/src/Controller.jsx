@@ -18,15 +18,12 @@ class Controller extends React.Component {
 
   
  changePlaylist = (songs) =>{
-   console.log("change playlist");
   this.setState((state) => ({
     songs:songs
   }));
  }
 
   playSong = (id, name, artist, duration) => {
-    console.log(duration);
-    console.log(this.state);
     this.setState((state) => ({
       videoCode: id,
       artist: artist,

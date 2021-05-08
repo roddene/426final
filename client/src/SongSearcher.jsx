@@ -16,7 +16,6 @@ class SongSearcher extends React.Component {
   }
 
   async updateSpotifyResults(val) {
-    console.log("searching");
     this.setState((state) => ({
       inputVal: val
     }));

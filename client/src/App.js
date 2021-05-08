@@ -31,7 +31,6 @@ class App extends React.Component{
         token:localStorage.getItem('token')
     })
 }).then((res)=>res.json())
-  console.log(result);
 
 
   }

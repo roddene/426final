@@ -49,14 +49,10 @@ class LoginForm extends React.Component {
                 })
               }).then((res)=>res.json());
               if(result.status === 'ok'){
-                  console.log("okay");
                   this.props.updateState(this.state.username,result.data,true);
                   localStorage.setItem('token',result.data);
-                  console.log("resultdata",result.data);
               }else if (result.status === 'error'){
-                  console.log("error return")
                   this.resetForm();
-                  console.log(result.error);
               } 
 
 
