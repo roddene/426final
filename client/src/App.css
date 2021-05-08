@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+iframe{
+  width:00px;
+  height:00px;
+}
+
+#progress{
+  white-space: nowrap;
+}
+
+#progressbardiv{
+  display: inline-block;
+  margin-left: 20px; 
+}
+.timedisplay{
+  display: inline-block;
+  margin-left: 20px; 
+}
+
+.songcomponent{
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px; 
+}
+
+.Song{
+  border-style: solid;
+  padding-bottom: px;
+
+}
+
+.playlistinfodata{
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px; 
+}
+
+
+
+
+input {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  width: 300px;
+}
+
+.no-suggestions {
+  color: #999;
+  padding: 0.5rem;
+}
+
+.suggestions {
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 143px;
+  overflow-y: auto;
+  padding-left: 0;
+  margin:auto;
+  width: calc(300px + 1rem);
+}
+
+.suggestions li {
+  padding: 0.5rem;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+  background-color: #103682;
+  color: #d8d6c6;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+
+

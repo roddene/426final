@@ -13,6 +13,7 @@ const spotifyAPI = require('./spotyifyapi');
 
 const JWTSECRET = '5n=bq5435n7N$^9bN70GJ-EA04Q)jgr(JOPJTP3-(&^(*%0&nb^(&409nbn^&$b)(#^)';
 
+const PORT = process.env.PORT ||3000;
 
 /*
 console.log("handllee");
@@ -29,16 +30,20 @@ const s = new spotifyAPI();
 
 
 
-mongoose.connect('mongodb://localhost:27017/final_users', {
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/final_users', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
 }).then(() => console.log('Database connected')).catch(e => console.log(e));
 
 var app = express();
-app.use('/', express.static(path.join(__dirname, 'build')));
+app.use('/', express.static(path.join(__dirname, 'client/build')));
 app.use(express.json());
 
+
+if(process.env.NODE_ENV === 'production'){
+    app.use('/', express.static(path.join(__dirname, 'client/build')));
+}
 
 app.post('/api/home', async (req, res) => {
     console.log("setting stoken");
@@ -322,8 +327,9 @@ app.post('/api/changepassword', async (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("server to 3000");
+
+app.listen(PORT, () => {
+    console.log(`server to ${PORT}`);
 })
 
 

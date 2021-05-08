@@ -4,7 +4,12 @@
   "main": "index.js",
   "author": "",
   "scripts": {
-    "build": "node test.js"
+    "build": "cd client &&npm run build",
+    "install-client":"cd client &&npm install",
+    "start":"node server.js",
+    "heroku-postbuild":"npm run install-client && npm run build",
+    "client": "cd client &&npm start"
+    
   },
   "license": "ISC",
   "dependencies": {
