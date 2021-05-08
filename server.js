@@ -30,7 +30,7 @@ const s = new spotifyAPI();
 
 
 
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/final_users', {
+mongoose.connect('mongodb+srv://elliottro:supapassword696@cluster0.u4vp8.mongodb.net/final_users?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
