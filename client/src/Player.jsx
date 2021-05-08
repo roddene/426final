@@ -34,7 +34,6 @@ class Player extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('player will recieve');
         this.setState({ playlist:nextProps.playlist,
             videoCode:nextProps.videoCode,
             artist:nextProps.artist,
@@ -67,7 +66,6 @@ class Player extends React.Component {
 
 
     videoOnReady = (event) => {
-        console.log("ready");
         this.setState((state) => ({
             player: event.target,
             totalTime: event.target.getDuration()
@@ -104,7 +102,6 @@ class Player extends React.Component {
         }
     }
     changeRepeat = (event) => {
-        console.log(!this.state.repeat);
         this.setState((state) => ({
             repeat: !this.state.repeat
         }));
@@ -128,7 +125,6 @@ class Player extends React.Component {
                    videoCode:newSong.id,
                    duration:newSong.duration
                 }));
-                console.log("now playing",this.state.song)
 
         } else {
                 let total = this.state.playlist.length;
@@ -141,7 +137,6 @@ class Player extends React.Component {
                         return i;
                     }
                 })
-                console.log("index",index)
 
                 let indexLookup = 0;
                 if(index !== this.state.playlist.length-1){
@@ -154,7 +149,6 @@ class Player extends React.Component {
                    videoCode:newSong.id,
                    duration:newSong.duration
                 }));
-            console.log("now playing shuffle",this.state.song)
             }
         } else{
             this.pauseVideo();
@@ -163,7 +157,7 @@ class Player extends React.Component {
     }
 
     changeTime = (event) => {
-        console.log(Math.floor(this.state.totalTime * event.nativeEvent.offsetX / 240));
+
         this.state.player.seekTo(Math.floor(this.state.totalTime * event.nativeEvent.offsetX / 240))
         this.setState((state) => ({
             curTime: Math.floor(this.state.totalTime * event.nativeEvent.offsetX / 240)

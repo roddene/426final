@@ -29,6 +29,8 @@ class PlaylistSelector extends React.Component {
         }
 
         async updatePlaylistlist(){
+          
+
             const token = localStorage.getItem('token');
             const username =this.props.username;
             const result = await fetch('/api/getPlaylists',{
@@ -56,8 +58,7 @@ class PlaylistSelector extends React.Component {
         async selectPlaylist (name,owner,id) {
             const token = localStorage.getItem('token');
 
-            console.log("selected");
-            console.log(id);
+
             this.setState((state)=>({
                 isActive:true,
                 playlistName:name,
@@ -74,12 +75,12 @@ class PlaylistSelector extends React.Component {
                     id
                 })
             }).then((res)=>res.json())
-            console.log(result);
+          
             this.setState((state)=>({
                 songs:result
             }));
             this.props.changePlaylist(result);
-            console.log("this.state.songs",this.state.songs);
+        
 
 
 
@@ -100,7 +101,7 @@ class PlaylistSelector extends React.Component {
                 })
             }).then((res)=>res.json())
             this.updatePlaylistlist();
-            this.selectPlaylist(this.state.playlistName,this.state.playlistOwner,this.state.playlistId);
+            //this.selectPlaylist(this.state.playlistName,this.state.playlistOwner,this.state.playlistId);
 
         }
 
@@ -115,7 +116,6 @@ class PlaylistSelector extends React.Component {
             const newplay = this.state.newPlaylistName;
             const username = this.state.username;
             const token = this.props.token;
-            console.log("newplay",newplay)
             const result = await fetch('/api/createPlaylist',{
                 method: 'POST',
                 headers:{
@@ -133,7 +133,7 @@ class PlaylistSelector extends React.Component {
 
 
         async addSong (songName,artist,duration,videoId){
-            console.log('add to playlist ',this.state.playlistId);
+          
             const token = localStorage.getItem('token');
             
             const result = await fetch('/api/addSong',{

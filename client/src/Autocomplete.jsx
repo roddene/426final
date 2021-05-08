@@ -24,9 +24,6 @@ class Autocomplete extends Component {
     }
 
     async youtubeSearch() {
-        console.log("activenum",this.state.activeSuggestion)
-        console.log(this.state.filteredSuggestions);
-        console.log(this.state.userInput, " === ",this.state.filteredSuggestions[this.state.activeSuggestion])
         
         if (this.state.userInput){
             try {
@@ -47,7 +44,6 @@ class Autocomplete extends Component {
                 console.log(e);
             }
         }else{
-            console.log("song could not be added, invalid input");
         }
     
     }
