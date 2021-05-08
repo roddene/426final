@@ -102,11 +102,13 @@ class Player extends React.Component {
         }
     }
     changeRepeat = (event) => {
+        alert(!this.state.repeat);
         this.setState((state) => ({
             repeat: !this.state.repeat
         }));
     }
     changeShuffle = (event) => {
+        alert(!state.isShuffling);
         this.setState((state) => ({
             isShuffling: !this.state.isShuffling
         }));

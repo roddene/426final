@@ -60,6 +60,7 @@ class App extends React.Component{
   return (
     <div className="App">
       <header className="App-header">
+        <title>Spotifootube</title>
         Welcome, {this.state.username}
         <Controller username = {this.state.username} token = {this.state.token} />
 
@@ -71,6 +72,7 @@ class App extends React.Component{
   return(
     <div className="App">
       <header className="App-header">
+      <title>Spotifootube</title>
         <LoginForm updateState ={this.updateState}/>
         <RegisterForm></RegisterForm>
       </header>
