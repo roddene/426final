@@ -108,7 +108,7 @@ class Player extends React.Component {
         }));
     }
     changeShuffle = (event) => {
-        alert(!state.isShuffling);
+        alert(!this.state.isShuffling);
         this.setState((state) => ({
             isShuffling: !this.state.isShuffling
         }));
